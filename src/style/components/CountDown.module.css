@@ -62,7 +62,29 @@
 
 .countdownButtonActive {
   background: var(--white);
-  color: var(--title);
+  color: var(--text);
+}
+
+.countdownButtonContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.countdownButtonContainer > span {
+  width: 100%;
+  transform: translateY(-4px);
+  display: flex;
+}
+
+.countdownButtonContainer > span span {
+  border-radius: 0 0 8px 8px;
+  background: var(--green);
+  height: 4px;
+  transition: width 0.5s ease-in;
+}
+
+.countdownButtonActive:hover svg path {
+  fill: var(--white);
 }
 
 .countdownButtonActive:not(:disabled):hover {

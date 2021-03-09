@@ -8,6 +8,7 @@ import {
 import { ChallengesContext } from "./ChallengesContext";
 
 interface CountDownContextData {
+  porcentTime: number;
   minutes: number;
   seconds: number;
   hasFinished: boolean;
@@ -39,6 +40,10 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
     setIsActive(true);
   }
 
+  const porcentTime = String((time / INITIALTIME) * 100 - 100)
+    .padStart(2, "-")
+    .split("-")[1];
+
   function resetCountdown() {
     clearTimeout(countdownTimeout);
     setIsActive(false);
@@ -61,6 +66,7 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
   return (
     <CountDownContext.Provider
       value={{
+        porcentTime: Number(porcentTime),
         minutes,
         seconds,
         hasFinished,

@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { CountDownContext } from "../contexts/CountDownContext";
+import IconClose from "../../public/icons/close.svg";
 import styles from "../style/components/CountDown.module.css";
 
 export function CountDown() {
   const {
+    porcentTime,
     minutes,
     seconds,
     hasFinished,
@@ -34,13 +36,18 @@ export function CountDown() {
           Ciclo encerrado <img src="icons/check.svg" alt="Ciclo encerrado" />
         </button>
       ) : isActive ? (
-        <button
-          onClick={resetCountdown}
-          type="button"
-          className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
-        >
-          Abandonar Ciclo <img src="icons/close.svg" alt="Abandonar Ciclo" />
-        </button>
+        <div className={styles.countdownButtonContainer}>
+          <button
+            onClick={resetCountdown}
+            type="button"
+            className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
+          >
+            Abandonar Ciclo <IconClose />
+          </button>
+          <span>
+            <span style={{ width: `${porcentTime}%` }}></span>
+          </span>
+        </div>
       ) : (
         <button
           onClick={startCountdown}

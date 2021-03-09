@@ -1,0 +1,48 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--blue);
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.containerBG {
+  display: flex;
+}
+
+.containerBG img {
+  height: 100vh;
+}
+
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.containerLogin > h1 {
+  color: var(--white);
+  margin-top: 6.25rem;
+}
+
+.containerLogin > div:first-of-type {
+  color: var(--text-highlight);
+  width: 18rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.containerLogin > div:first-of-type p {
+  width: 14rem;
+}
+
+.containerLogin .logo svg path:nth-child(odd) {
+  fill: var(--white);
+}

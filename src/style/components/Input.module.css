@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+}
+
+.container input {
+  height: 5rem;
+  width: 21.25rem;
+  padding-left: 1.825rem;
+  background: var(--linear-gradient-blue-dark);
+  border: 1.5px solid transparent;
+  border-radius: 5px 0px 0px 5px;
+  color: var(--white);
+}
+
+.container input:hover,
+.container input:focus {
+  border: 1.5px solid #414aa3;
+}
+
+.container input::placeholder {
+  color: var(--text-highlight);
+}
+
+.container input:focus::placeholder {
+  color: transparent;
+}
+
+.container button {
+  background: var(--blue-dark);
+  border: 0;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.container button img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.container .btnGreen {
+  background: var(--green);
+}

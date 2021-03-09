@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  align-items: center;
+  background: linear-gradient(180deg, var(--white), transparent);
+  filter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.05));
+}
+
+.container > svg {
+  margin: 2rem 2rem 0;
+}
+
+.container nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container nav ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.container nav ul li {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.navbar ul li:hover {
+  background: var(--white);
+  cursor: pointer;
+}
+
+.navbar ul li:hover::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 3.5rem;
+  left: 0px;
+  background: var(--blue);
+  border-radius: 0px 5px 5px 0px;
+  animation: animate 0.2s ease-in;
+}
+
+.navbar ul li svg path {
+  opacity: 0.5;
+  stroke: var(--blue);
+  transition: opacity 0.2s;
+}
+
+.navbar ul li:hover svg path {
+  opacity: 1;
+}
+
+.navbarActive {
+  background: var(--white);
+}
+
+.navbarActive svg path {
+  opacity: 1 !important;
+}
+
+.navbarActive::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 3.5rem;
+  left: 0px;
+  background: var(--blue);
+  border-radius: 0px 5px 5px 0px;
+  animation: animate 0.2s ease-in;
+}
+
+@keyframes animate {
+  from {
+    height: 0rem;
+  }
+  to {
+    height: 3.5rem;
+  }
+}

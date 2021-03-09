@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 :root {
@@ -16,6 +17,11 @@
   --blue: #5965e0;
   --blue-dark: #4953b8;
   --blue-twitter: #2aa9e0;
+  --linear-gradient-blue-dark: linear-gradient(
+    90deg,
+    var(--blue-dark) 0%,
+    rgba(73, 83, 184, 0.2) 100%
+  );
 }
 
 @media (max-width: 1080px) {
